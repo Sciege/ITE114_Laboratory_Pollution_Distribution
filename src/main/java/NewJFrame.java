@@ -58,6 +58,7 @@ public class NewJFrame extends javax.swing.JFrame {
     });
     
     // Override paintComponent by adding a custom JPanel inside the existing one
+    //this is just overriding calling inside the java again
     JPanel customPaintPanel = new JPanel() {
     @Override
     protected void paintComponent(Graphics g) {
@@ -68,10 +69,10 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 };
     
-    customPaintPanel.setOpaque(false); // Make it transparent
-    existingHeatmap.removeAll(); // Remove any existing components
-    existingHeatmap.setLayout(new BorderLayout()); // Use BorderLayout
-    existingHeatmap.add(customPaintPanel, BorderLayout.CENTER); // Add custom panel to fill the space
+    customPaintPanel.setOpaque(false); // transparent
+    existingHeatmap.removeAll(); // remove any existing components
+    existingHeatmap.setLayout(new BorderLayout()); 
+    existingHeatmap.add(customPaintPanel, BorderLayout.CENTER); 
 }
 
     /**
@@ -146,7 +147,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(132, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addGap(114, 114, 114))
+                .addGap(116, 116, 116))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,27 +229,29 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(panelGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator2)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(panelGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 3, Short.MAX_VALUE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(109, 109, 109)
+                                .addComponent(jLabel2)
+                                .addGap(27, 27, 27)
+                                .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(165, 165, 165)
+                                .addComponent(OK, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jLabel2)
-                        .addGap(27, 27, 27)
-                        .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(OK, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,22 +284,24 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel1))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(heatmap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(heatmap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
                                 .addComponent(pollution, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jSeparator1)
-                    .addComponent(jSeparator4))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 991, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,16 +335,18 @@ public class NewJFrame extends javax.swing.JFrame {
             gridSize = (int) Math.sqrt(cellList.size());
             double[][] pollutionMatrix = new double[gridSize][gridSize];
 
+            Font textFieldFont = new Font("Arial", Font.PLAIN, 14);
             // Extract values from JTextFields
             for (int i = 0; i < gridSize; i++) {
                 for (int j = 0; j < gridSize; j++) {
                     int index = i * gridSize + j;
-                    String text = cellList.get(index).getText().trim();
-
+                    JTextField cell = cellList.get(index);
+                    cell.setFont(textFieldFont);
+                    String text = cell.getText().trim();   
                     try {
                         pollutionMatrix[i][j] = Double.parseDouble(text);
                     } catch (NumberFormatException e) {
-                        pollutionMatrix[i][j] = 0.0; // Default to 0 if invalid
+                        pollutionMatrix[i][j] = 0.0; 
                     }
                 }
             }
@@ -347,7 +354,7 @@ public class NewJFrame extends javax.swing.JFrame {
             RealMatrix matrix = new Array2DRowRealMatrix(pollutionMatrix);
             EigenDecomposition eigen = new EigenDecomposition(matrix);
 
-            eigenvectorMatrix = new double[gridSize][gridSize]; // Initialize matrix for heatmap
+            eigenvectorMatrix = new double[gridSize][gridSize]; 
 
             for (int i = 0; i < gridSize; i++) {
                 RealVector eigenVector = eigen.getEigenvector(i);
@@ -398,9 +405,10 @@ public class NewJFrame extends javax.swing.JFrame {
     for (int i = 0; i < eigenValues.length; i++) {
     String eigenValueText = String.format("   - Factor %d: %.4f", (i + 1), eigenValues[i]);
     JLabel eigenLabel = new JLabel(eigenValueText, JLabel.CENTER);
+    eigenLabel.setFont(new Font("Arial",Font.BOLD, 14));
     eigen_panel.add(eigenLabel);
 
-    // **Interpretation Logic**
+    // **interpretation Logic**
     String interpretation;
     if (eigenValues[i] == 1.0) {
         interpretation = "⚠️ Zone " + (i + 1) + " retains pollution for a long time.";
@@ -413,6 +421,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     JLabel interpretationLabel = new JLabel(interpretation, JLabel.CENTER);
+    interpretationLabel.setFont(new Font("Arial",Font.PLAIN, 14));
     eigen_panel.add(interpretationLabel);
 }
 
@@ -450,6 +459,7 @@ for (int i = 0; i < pollutionMatrix.length; i++) {
     }
 
     JLabel eigenvectorLabel = new JLabel(vectorText.toString(), JLabel.CENTER);
+    eigenvectorLabel.setFont(new Font("Arial",Font.BOLD, 14));
     eigenvectors_panel.add(eigenvectorLabel);
 
     // **Interpretation Logic for Eigenvectors**
@@ -489,6 +499,7 @@ if (Math.abs(maxVal - minVal) < 0.05) {
 }
 
     JLabel vectorInterpretationLabel = new JLabel(vectorInterpretation, JLabel.CENTER);
+    vectorInterpretationLabel.setFont(new Font("Arial",Font.PLAIN, 14));
     eigenvectors_panel.add(vectorInterpretationLabel);
 }  
    
@@ -527,22 +538,28 @@ eigenvectors_panel.repaint();
             panelGrid.setLayout(new GridLayout(size + 1, size + 1, 5, 5));
             cellList.clear();  // Clear previous references
 
-            panelGrid.add(new JLabel("Zones", JLabel.CENTER));
+            JLabel zonesLabel = new JLabel("Zones", JLabel.CENTER);
+            zonesLabel.setFont(new Font("Arial", Font.BOLD, 14)); 
+            panelGrid.add(zonesLabel);
 
             for (int i = 1; i <= size; i++) {
-                panelGrid.add(new JLabel("Zone " + i, JLabel.CENTER));
+            JLabel topLabel = new JLabel("Zone " + i, JLabel.CENTER);
+            topLabel.setFont(new Font("Arial", Font.BOLD, 14));
+            panelGrid.add(topLabel);
             }
 
             for (int i = 1; i <= size; i++) {
-                panelGrid.add(new JLabel("Zone " + i, JLabel.CENTER));
+            JLabel leftLabel = new JLabel("Zone " + i, JLabel.CENTER);
+            leftLabel.setFont(new Font("Arial", Font.BOLD, 14));
+            panelGrid.add(leftLabel);
 
-                for (int j = 1; j <= size; j++) {
-                    JTextField cell = new JTextField();
-                    cell.setHorizontalAlignment(JTextField.CENTER);
-                    panelGrid.add(cell);
-                    cellList.add(cell);
-                }
+        for (int j = 1; j <= size; j++) {
+            JTextField cell = new JTextField();
+            cell.setHorizontalAlignment(JTextField.CENTER);
+            panelGrid.add(cell);
+            cellList.add(cell);
             }
+    }
             panelGrid.revalidate();
             panelGrid.repaint();
         } catch (NumberFormatException ex) {
@@ -578,6 +595,8 @@ eigenvectors_panel.repaint();
     }
 
     Graphics2D g2d = (Graphics2D) g;
+    Font font = new Font("Arial", Font.BOLD, 20);
+    g2d.setFont(font);
     for (int i = 0; i < gridSize; i++) {
         for (int j = 0; j < gridSize; j++) {
             double value = eigenvectorMatrix[i][j];
@@ -591,11 +610,11 @@ eigenvectors_panel.repaint();
             g2d.setColor(color);
             g2d.fillRect(j * cellWidth, i * cellHeight, cellWidth, cellHeight);
 
-            // Draw cell borders
+            // draw cell borders
             g2d.setColor(Color.BLACK);
             g2d.drawRect(j * cellWidth, i * cellHeight, cellWidth, cellHeight);
 
-            // Optional: Display value text
+         
             g2d.setColor(Color.BLACK);
             String valueText = String.format("%.2f", value);
             g2d.drawString(valueText, j * cellWidth + cellWidth / 4, i * cellHeight + cellHeight / 2);
@@ -612,6 +631,14 @@ private void drawLegend(Graphics2D g2d, int panelWidth, int panelHeight) {
     int startX = panelWidth - legendWidth - 8;
     int startY = 15;
 
+    
+    Font currentFont = g2d.getFont();
+
+    // Set a new font for the legend text to prevent it from being affected by heatmap font
+    Font legendFont = new Font("Arial", Font.PLAIN, 12);  // Customize this as needed
+    g2d.setFont(legendFont);
+    
+    
     // Draw legend title
     g2d.setColor(Color.WHITE);
     g2d.drawString("Legend", startX - 8, startY - 5);
@@ -621,7 +648,7 @@ private void drawLegend(Graphics2D g2d, int panelWidth, int panelHeight) {
         float ratio = (float) i / legendHeight; // Normalize from 0 to 1
         float red = ratio;   // More red for high values
         float blue = 1 - ratio; // More blue for low values
-        g2d.setColor(new Color(red, 0, blue)); 
+        g2d.setColor(new Color(blue, 0, red)); 
         g2d.fillRect(startX, startY + i, legendWidth, 1);
     }
 
