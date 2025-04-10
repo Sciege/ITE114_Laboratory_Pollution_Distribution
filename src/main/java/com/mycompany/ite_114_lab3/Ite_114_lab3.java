@@ -19,8 +19,8 @@
          // Step 1: Define the 3x3 pollution dispersion matrix (Barangay zones)
             double[][] pollutionMatrix = {
                 {0.8, 0.1, 0.1},  // Zone A: Main road (High pollution retention)
-                {0.1, 0.8, 0.1},  // Zone B: Residential area
-                {0.1, 0.1, 0.8}   // Zone C: Green space (More dispersion)
+                {0.2, 0.7, 0.1},  // Zone B: Residential area
+                {0.1, 0.3, 0.6}   // Zone C: Green space (More dispersion)
             };
 
             // Step 2: Compute eigenvalues and eigenvectors

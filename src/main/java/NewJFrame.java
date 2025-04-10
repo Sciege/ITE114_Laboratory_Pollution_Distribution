@@ -32,8 +32,8 @@ import org.apache.commons.math3.linear.RealVector;
 
 public class NewJFrame extends javax.swing.JFrame {
     private List<JTextField> cellList = new ArrayList<>();
-    private double[][] eigenvectorMatrix; // Store eigenvectors for visualization
-    private int gridSize = 0; // Store the grid size
+    private double[][] eigenvectorMatrix; // store eigenvectors for visualization
+    private int gridSize = 0; // store the grid size
 
     /**
      * Creates new form NewJFrame
@@ -43,9 +43,9 @@ public class NewJFrame extends javax.swing.JFrame {
     getContentPane().setBackground(new Color(163, 135, 114)); 
     // Customize the existing heatmap panel WITHOUT replacing it
     final JPanel existingHeatmap = heatmap; // Save reference to the original panel
-    heatmap.getParent().setLayout(new BorderLayout());  // Ensure parent allows resizing
+    heatmap.getParent().setLayout(new BorderLayout());  
 
-    // Clear any existing layout
+    // clear any existing layout
     existingHeatmap.setBackground(Color.WHITE);
     
     // Add a component listener to detect when the panel gets sized
@@ -53,7 +53,7 @@ public class NewJFrame extends javax.swing.JFrame {
         @Override
         public void componentResized(ComponentEvent e) {
             System.out.println("Heatmap resized to: " + existingHeatmap.getWidth() + "x" + existingHeatmap.getHeight());
-            existingHeatmap.repaint(); // Repaint when size changes
+            existingHeatmap.repaint(); 
         }
     });
     
@@ -64,7 +64,7 @@ public class NewJFrame extends javax.swing.JFrame {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (eigenvectorMatrix != null && gridSize > 0) {
-            drawHeatmap(g, getWidth(), getHeight()); // Pass current dimensions
+            drawHeatmap(g, getWidth(), getHeight()); 
         }
     }
 };
@@ -369,10 +369,10 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
                 System.out.println();
             }
-            // Debug output
+            // debug 
             System.out.println("Before repaint - Heatmap dimensions: " + heatmap.getWidth() + "x" + heatmap.getHeight());
 
-            // Make sure the panel is visible
+            
             if (!heatmap.isVisible()) {
                 heatmap.setVisible(true);
             }
@@ -568,6 +568,7 @@ eigenvectors_panel.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
   
     //search it
+    //help
     private void drawHeatmap(Graphics g, int width, int height) {
     if (eigenvectorMatrix == null || gridSize == 0 || g == null) return;
 
@@ -634,8 +635,8 @@ private void drawLegend(Graphics2D g2d, int panelWidth, int panelHeight) {
     
     Font currentFont = g2d.getFont();
 
-    // Set a new font for the legend text to prevent it from being affected by heatmap font
-    Font legendFont = new Font("Arial", Font.PLAIN, 12);  // Customize this as needed
+    // font for the legend text to prevent it from being affected by heatmap font
+    Font legendFont = new Font("Arial", Font.PLAIN, 12);  
     g2d.setFont(legendFont);
     
     
